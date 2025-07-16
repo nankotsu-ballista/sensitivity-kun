@@ -9,6 +9,10 @@ from optimizer import suggest_next, save_to_csv
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "Sensitivity-kun API is running!"}
+
 # ★ CORSミドルウェアの追加（ "*" に変更）
 app.add_middleware(
     CORSMiddleware,
